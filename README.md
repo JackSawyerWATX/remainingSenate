@@ -5,7 +5,7 @@
 ## Key Points
 
 1. Input:
-    * A string <senate> where each character represents a senator:
+    * A string "senate" where each character represents a senator:
         * 'R' for Republican
         * 'D' for Democrat
     * The string represents the order of senators participating in the voting process.
@@ -33,7 +33,7 @@ Input: Senate = "RD"
     * Only (R) remains
 2. Republican Party has the victory
 
-Output: <Republican>
+Output: Republican
 
 ### Example 2
 
@@ -44,7 +44,7 @@ Input: Senate = "RDD"
     * The updated sequence is (D)
 2. The remaining (D) senator announces victory.
 
-Output: <Democrat>
+Output: Democrat
 
 ## What is being asked:
 
@@ -66,11 +66,11 @@ Simulate the voting precedure:
 ## How to solve it:
 
 1. Create 2 queues
-    * <republicanQueue> to store indices of 'R' seantors
-    * <democratQueue> to store the indices of 'D' senators
+    * republicanQueue to store indices of 'R' seantors
+    * democratQueue to store the indices of 'D' senators
 2. Populate the queues with the indices of 'R' and 'D' in the input string
 3. Process the queues:
     * Compare the front elements of both queues
     * the senator with the earlier turn (smaller index) bans the other and reinstates them selves into the queue with an updated index, simulating a circular order.
 4. Continue until one queue is empty.
-5. If <republicanqQueue> is empty, return <Democrat>. If <democratQueue> is empty, return <Republican>.
+5. If republicanqQueue is empty, return Democrat. If democratQueue is empty, return Republican.
